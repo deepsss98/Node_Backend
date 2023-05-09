@@ -6,11 +6,13 @@ import * as dotenv from "dotenv";
 import { booksRouter } from "./routes/books.js";
 import { usersRouter } from "./routes/users.js";
 
+export const app = express();
+app.use(cors());
 dotenv.config();
 
 console.log(process.env);
 
-export const app = express();
+
 //const PORT = 9000;
 const PORT = process.env.PORT;
 
