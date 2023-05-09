@@ -5,6 +5,7 @@ import { MongoClient } from "mongodb";
 import * as dotenv from "dotenv";
 import { booksRouter } from "./routes/books.js";
 import { usersRouter } from "./routes/users.js";
+import  cors  from "cors";
 
 export const app = express();
 app.use(cors());
