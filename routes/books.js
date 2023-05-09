@@ -4,14 +4,14 @@ import { auth } from "../middleware/auth.js";
 const router = express.Router();
 
 
-router.get("/:id",auth,async (req, res) => {
+router.get("/:id",async (req, res) => {
   const { id } = req.params;
   console.log(req.params);
   const book = await getBookById(id);
   res.send(book);
 });
 
-router.get("/",auth,async (req, res) => {
+router.get("/",async (req, res) => {
   console.log(req.query);
   if (req.query.rating) {
     req.query.rating = +req.query.rating;
